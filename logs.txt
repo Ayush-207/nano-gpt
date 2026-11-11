@@ -1,0 +1,29 @@
+Result 1 ---
+torch.manual_seed(1337)
+batch_size = 32
+block_size = 8
+max_iters = 3000
+eval_interval = 300
+eval_iters = 200
+learning_rate = 1e-2
+n_embd = 32
+
+B, T = idx.shape
+    token_emb = self.token_embedding_table(idx) # (B, T, C)
+    pos_emb = self.position_embedding_table(torch.arange(T)) # (T, C)
+    x = token_emb + pos_emb # (B, T, C)
+    logits = self.lm_head(x) # (B, T, vocab_size)
+
+step: 0, train_loss: 4.517942428588867, val_loss: 4.515789031982422
+step: 300, train_loss: 2.4504246711730957, val_loss: 2.4554567337036133
+step: 600, train_loss: 2.433950185775757, val_loss: 2.4324841499328613
+step: 900, train_loss: 2.411875009536743, val_loss: 2.4134838581085205
+step: 1200, train_loss: 2.4211034774780273, val_loss: 2.4214117527008057
+step: 1500, train_loss: 2.4130773544311523, val_loss: 2.4207427501678467
+step: 1800, train_loss: 2.4148917198181152, val_loss: 2.4115822315216064
+step: 2100, train_loss: 2.418619394302368, val_loss: 2.4137775897979736
+step: 2400, train_loss: 2.4229366779327393, val_loss: 2.4204885959625244
+step: 2700, train_loss: 2.404555320739746, val_loss: 2.4135026931762695
+
+Result 2 --- 
+
